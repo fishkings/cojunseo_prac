@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>리스트 보여주기</title>
+	<title>등록한 집 세부 내용</title>
 	<style>
 		/* cspell:disable-file */
 		/* webkit printing magic: print all background colors */
@@ -821,38 +821,23 @@
 </head>
 
 <body>
-	<article id="09921794-11c7-44cf-b979-ed235c39f863" class="page sans">
+	<article id="d33a1510-9d81-4934-a7f3-9f51e00c3cbc" class="page sans">
 		<header>
-			<h1 class="page-title">리스트 보여주기</h1>
+			<h1 class="page-title">등록한 집 세부 내용</h1>
 			<p class="page-description"></p>
 		</header>
 		<div class="page-body">
-			<p id="32604274-e30f-426e-83b9-89f5e6c1d918" class="">리스트 보여주기</p>
-
-			{% if length != 0 %}
-			{% for house in house_list %}
-			<a href="{{url_for('house_info', index=house[0])}}">
-				<h2>{{house[1]}}</h2>
-				<h2>{% endfor %}</h2>
-			</a>
-			{% else %}
-			<h1> 집을 등록해주세요.</h1>
-			{%endif%}
-
-
-			<table id="3ad03fb7-5942-456a-8882-699c984150c0" class="simple-table">
-				<tbody>
-					<tr id="268d57d0-32e9-41c3-ac87-8c89986a43eb">
-						<td id="N;CZ" class="">{{one}}</td>
-						<td id="&lt;&gt;`:" class="">{{two}}</td>
-					</tr>
-					<tr id="c2f49539-9392-4d66-afd7-dc75dc1a2536">
-						<td id="N;CZ" class=""></td>
-						<td id="&lt;&gt;`:" class=""></td>
-					</tr>
-				</tbody>
-			</table>
-			<p id="58477fba-b5d5-4b2b-934e-22d44cb91912" class="">
+			<p id="53339401-7358-43c4-9105-5ae3079a6613" class="">집 위치- {{location}}</p>
+			<p id="34441a3e-8a84-44b8-a603-7f3ee381db34" class="">
+				청결도 - {%if cleaness == True%} 🌟
+				{%else%} ☆
+				{%endif%}
+			<div>
+				<img src={{url_for('static',filename=photo)}}>
+			</div>
+			</p>
+			<p id="10567c00-d8bc-46de-88d9-cb700a1bb803" class="">빌트인 항목 - {{built_in}}</p>
+			<p id="69b83521-6e95-4799-abee-68d08d259338" class="">
 			</p>
 		</div>
 	</article>
